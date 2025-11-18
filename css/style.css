@@ -55,6 +55,14 @@ position: relative;
 
 /*navigation*/
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FDFFFA;
+    padding: 1em;
+}
+
 header nav{
 background-color: #FDFFFA;
 padding: 1em;
@@ -163,6 +171,49 @@ footer{
     text-align: center; /* Centrerer teksten horisontalt */
 }
 
+/*KONTAKTFORMULAR*/ 
+
+.kontaktform {
+  border-radius: 5px;
+  background-color: #FDFFFA;
+  padding: 1.3em;
+  width: 80%;
+  margin: 2em auto 0 auto; /*Centrerer elementet på siden*/
+}
+
+input[type=text], input[type=email], input[type=tel], select, textarea {
+    width: 100%;
+    padding: 1em;
+    border: black 1px solid;
+    border-radius: 5px;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+select, input[type=radio], input[type=submit]{
+    cursor: pointer;
+}
+
+fieldset{
+    border-color: #F9863A;
+    border-style: dotted;
+    margin-bottom: 1em;
+    margin-bottom: 0.8em;
+}
+
+input[type=submit]{ /*send besked knap*/
+    background-color: #F9863A;
+    color: white;
+    padding: 0.8em 1.5em;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+}
+
+input[type=submit]:hover{
+    background-color:#a85b27
+}
+
 /*DESKTOP-MEDIA-QUERY*/
 
 @media screen and (min-width: 769px) {
@@ -175,34 +226,35 @@ footer{
 /*MOBILE-MEDIA-QUERY*/
 
 @media screen and (max-width: 768px) {
-    header nav ul{
+    
+    
+header nav ul{
         display: none; /*fjerner navigationen på mobil*/
     }
 
-
-header nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .show{
+    header nav ul.show{
         display: block; /*viser navigationen når burger menuen er klikket på*/
        
         position: absolute; /*gør at menuen kommer til at ligge ovenpå indholdet*/
         
-        top: 49px; /*placerer menuen lige under headeren - skal måske ændres*/
+        top: 80px; /*placerer menuen lige under headeren - skal måske ændres*/
         
         left: 0; /*gør at menuen starter fra venstre side af skærmen*/
 
         width: 100%; /*gør at menuen fylder hele skærmens bredde*/
 
-        background-color: rgb(185, 159, 111);/*ændre baggrundsfarven på menuen*/
+        background-color: #EAF1E1;/*ændre baggrundsfarven på menuen*/
+
+        z-index: 1000; /*sørger for at menuen ligger øverst*/
     }
 
     #bars{
         background-color: transparent; /*gør baggrunden på burger menuen gennemsigtig*/
         border: none; /*fjerner borderen på burger menuen*/
+    }
+
+    section:nth-of-type(1) div{
+        padding-bottom: 2em; /*tilføjer padding under teksten i første sektion*/
     }
 
 }
